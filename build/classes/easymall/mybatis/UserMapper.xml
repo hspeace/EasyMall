@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="easymall.dao.UserDao">
+<!-- 用户登录功能，返回User类对象 -->
+<select id="login" parameterType="easymall.po.User" resultType="easymall.po.User">
+	select * from user where username = #{username} and password = #{password}
+</select>
+<!-- 检查用户是否已被注册 -->
+<select id="checkUsername" parameterType="String" resultType="easymall.po.User">
+	select * from user where username = #{username}
+</select>
+
+<!-- 实现注册功能 -->
+<insert id="regist" parameterType="easymall.po.User">
+	insert into user(id,username,password,nickname,email) 
+	      values(null,#{username},#{password},#{nickname},#{email})
+</insert>
+
+
+</mapper>

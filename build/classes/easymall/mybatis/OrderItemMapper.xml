@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="easymall.dao.OrderItemDao">
+
+<insert id="addOrderItem" parameterType="easymall.po.OrderItem">
+	insert into OrderItem(order_id,product_id,buynum)
+	values(#{order_id},#{product_id},#{buynum})
+</insert>
+
+<select id="orderitem" parameterType="String" resultType="easymall.po.OrderItem">
+	select * from orderitem where order_id=#{order_id};
+</select>
+
+<delete id="delorderitem" parameterType="String"  >
+	delete from orderitem where order_id=#{id}
+</delete>
+
+<select id="allorderitem" resultType="easymall.po.OrderItem">
+	select * from orderitem;
+</select>
+
+
+</mapper>
