@@ -22,7 +22,7 @@
 
 1. small.sql 只有数据库结构，没有其他数据。需要自行登录后，在后台手动添加。演示网站的所有数据均为我后台添加，无需手动插入数据库。
 
-2. MySql账户密码修改在内 [applicationContext](src/applicationContext)修改
+2. MySql账户密码修改在内 [applicationContext](src/)修改
 
    
 
